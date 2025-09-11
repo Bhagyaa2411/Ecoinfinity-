@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - GreenLearn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(to right, #2e7d32, #66bb6a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+
+        .input-box {
+            margin: 12px 0;
+            width: 100%;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            background: #2e7d32;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1b5e20;
+        }
+
+        .toggle-link {
+            color: #388e3c;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .back-home {
+            margin-top: 10px;
+        }
+
+        .back-home a {
+            text-decoration: none;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="login-form">
+            <h2>🔑 Student Login</h2>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button class="btn" onclick="location.href='studentdashboard.html'">Login</button>
+            <p>Don't have an account? <span class="toggle-link" onclick="toggleForm()">Sign Up</span></p>
+            <div class="back-home"><a href="index.html">⬅ Back to Home</a></div>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup-form" class="hidden">
+            <h2>📝 Student Signup</h2>
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" required>
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Confirm Password" required>
+            </div>
+            <button class="btn" onclick="location.href='studentdashboard.html'">Create Account</button>
+            <p>Already have an account? <span class="toggle-link" onclick="toggleForm()">Login</span></p>
+            <div class="back-home"><a href="index.html">⬅ Back to Home</a></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            document.getElementById("login-form").classList.toggle("hidden");
+            document.getElementById("signup-form").classList.toggle("hidden");
+        }
+    </script>
+</body>
+
+</html>

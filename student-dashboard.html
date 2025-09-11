@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - GreenLearn</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background: #2e7d32;
+            color: #fff;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            transition: width 0.3s;
+        }
+
+        .sidebar.collapsed {
+            width: 70px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+            transition: opacity 0.3s;
+        }
+
+        .sidebar.collapsed h2 {
+            opacity: 0;
+        }
+
+        .toggle-btn {
+            background: #1b5e20;
+            color: #fff;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            align-self: center;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            margin: 6px 0;
+            background: #388e3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .sidebar a:hover {
+            background: #1b5e20;
+        }
+
+        .sidebar.collapsed a .text {
+            display: none;
+        }
+
+        .logout {
+            margin-top: auto;
+            background: #e53935 !important;
+        }
+
+        .logout:hover {
+            background: #c62828 !important;
+        }
+
+
+        .sidebar.collapsed {
+            width: 70px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .toggle-btn {
+            background: #1b5e20;
+            color: #fff;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            align-self: center;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px;
+            margin: 6px 0;
+            background: #388e3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: #1b5e20;
+        }
+
+        .logout {
+            margin-top: auto;
+            background: #e53935 !important;
+        }
+
+        .logout:hover {
+            background: #c62828 !important;
+        }
+
+        /* Main content placeholder */
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f4f6f8;
+        }
+
+        .main h1 {
+            color: #2e7d32;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <h2 class="logo">🌍</h2>
+        <a href="chapters.html"><span class="icon">📚</span><span class="text">Chapters</span></a>
+        <a href="leaderboard.html"><span class="icon">🏆</span><span class="text">Leaderboard</span></a>
+        <a href="badges.html"><span class="icon">🎖</span><span class="text">Badges</span></a>
+        <a href="index.html" class="logout"><span class="icon">🚪</span><span class="text">Logout</span></a>
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1>👋 Welcome to your Dashboard</h1>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("collapsed");
+        }
+    </script>
+
+</body>
+
+</html>

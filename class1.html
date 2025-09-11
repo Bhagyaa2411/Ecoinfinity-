@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 1: Intro to Ecology - GreenLearn</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7f6;
+            display: flex;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Sidebar - Keep the same styles */
+        .sidebar {
+            width: 260px;
+            background: #fff;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            transition: width 0.3s;
+        }
+
+        .sidebar.collapsed {
+            width: 80px;
+        }
+
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #2e7d32;
+            transition: opacity 0.3s;
+        }
+
+        .sidebar.collapsed h2 {
+            opacity: 0;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 12px 0;
+            color: #333;
+            font-size: 15px;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .sidebar-item:hover {
+            background: #e6f0eb;
+        }
+
+        .sidebar-item span.text {
+            white-space: nowrap;
+        }
+
+        .sidebar.collapsed .sidebar-item span.text {
+            display: none;
+        }
+
+        /* Main Content */
+        .main {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .main h1 {
+            margin: 0 0 20px;
+            color: #2e7d32;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .lesson-content {
+            background: #fff;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .lesson-content h2 {
+            color: #222;
+            margin-top: 0;
+        }
+
+        .quiz-btn {
+            display: inline-block;
+            background: #2e7d32;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .quiz-btn:hover {
+            background: #1b5e20;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+        <h2>Ecofinity</h2>
+        <a href="chapters.html" class="sidebar-item">📚 <span class="text">Chapters</span></a>
+        <a href="leaderboard.html" class="sidebar-item">🏆 <span class="text">Leaderboard</span></a>
+        <a href="badges.html" class="sidebar-item">🏅 <span class="text">Badges</span></a>
+        <a href="index.html" class="sidebar-item">🚪 <span class="text">Logout</span></a>
+    </div>
+
+    <div class="main">
+        <h1>🌱 Class 1: What is Ecology?</h1>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/E-0g70_p0-s" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="lesson-content">
+            <h2>The Story of Our Planet</h2>
+            <p>
+                Imagine our Earth is a big family! **Ecology** is the study of how everyone in this family lives
+                together. This includes all the plants, animals, and even us! It also looks at how they use things like
+                water, air, and soil to live.
+            </p>
+            <p>
+                In this class, you'll learn about **ecosystems**, which are like the different neighborhoods on Earth.
+                You'll see how a small bee helps a flower, and how that flower helps the whole world. Everything is
+                connected!
+            </p>
+            <p>
+                Let's see what you've learned!
+            </p>
+            <a href="quiz1.html" class="quiz-btn">Take Quiz</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        }
+    </script>
+</body>
+
+</html>

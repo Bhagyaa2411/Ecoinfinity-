@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badges - GreenLearn</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7f6;
+            display: flex;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: #fff;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            transition: width 0.3s;
+        }
+
+        .sidebar.collapsed {
+            width: 80px;
+        }
+
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #2e7d32;
+            transition: opacity 0.3s;
+        }
+
+        .sidebar.collapsed h2 {
+            opacity: 0;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 12px 0;
+            color: #333;
+            font-size: 15px;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .sidebar-item:hover {
+            background: #e6f0eb;
+        }
+
+        .sidebar-item span.text {
+            white-space: nowrap;
+        }
+
+        .sidebar.collapsed .sidebar-item span.text {
+            display: none;
+        }
+
+        /* Main */
+        .main {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .main h1 {
+            margin: 0 0 25px;
+            font-size: 26px;
+            color: #222;
+        }
+
+        /* Badge Grid */
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .badge-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .badge-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge-emoji {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .badge-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .badge-desc {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+        <h2>Ecofinity</h2>
+        <a href="chapters.html" class="sidebar-item">📚 <span class="text">Chapters</span></a>
+        <a href="leaderboard.html" class="sidebar-item">🏆 <span class="text">Leaderboard</span></a>
+        <a href="badges.html" class="sidebar-item">🏅 <span class="text">Badges</span></a>
+        <a href="index.html" class="sidebar-item">🚪 <span class="text">Logout</span></a>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+        <h1>Badges</h1>
+        <div class="badges-grid">
+            <div class="badge-card">
+                <div class="badge-emoji">🌱</div>
+                <div class="badge-title">Eco Beginner</div>
+                <div class="badge-desc">Completed first chapter</div>
+            </div>
+            <div class="badge-card">
+                <div class="badge-emoji">🌍</div>
+                <div class="badge-title">Eco Explorer</div>
+                <div class="badge-desc">Unlocked 3 chapters</div>
+            </div>
+            <div class="badge-card">
+                <div class="badge-emoji">♻️</div>
+                <div class="badge-title">Sustainability Champ</div>
+                <div class="badge-desc">Finished Waste Management</div>
+            </div>
+            <div class="badge-card">
+                <div class="badge-emoji">🏆</div>
+                <div class="badge-title">Top Performer</div>
+                <div class="badge-desc">Ranked #1 in leaderboard</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        }
+    </script>
+</body>
+
+</html>

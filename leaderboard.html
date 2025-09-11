@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - GreenLearn</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7f6;
+            display: flex;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: #fff;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            transition: width 0.3s;
+        }
+
+        .sidebar.collapsed {
+            width: 80px;
+        }
+
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #2e7d32;
+            transition: opacity 0.3s;
+        }
+
+        .sidebar.collapsed h2 {
+            opacity: 0;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 12px 0;
+            color: #333;
+            font-size: 15px;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .sidebar-item:hover {
+            background: #e6f0eb;
+        }
+
+        .sidebar-item span.text {
+            white-space: nowrap;
+        }
+
+        .sidebar.collapsed .sidebar-item span.text {
+            display: none;
+        }
+
+        /* Main */
+        .main {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .main h1 {
+            margin: 0 0 25px;
+            font-size: 26px;
+            color: #222;
+        }
+
+        /* Leaderboard Table */
+        .leaderboard {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .leaderboard th,
+        .leaderboard td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .leaderboard th {
+            background: #e6f0eb;
+            font-size: 14px;
+        }
+
+        .leaderboard tr:hover {
+            background: #f0f5f3;
+        }
+
+        .rank {
+            font-weight: bold;
+        }
+
+        .medal {
+            font-size: 18px;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+        <h2>Ecofinity</h2>
+        <a href="chapters.html" class="sidebar-item">📚 <span class="text">Chapters</span></a>
+        <a href="leaderboard.html" class="sidebar-item">🏆 <span class="text">Leaderboard</span></a>
+        <a href="badges.html" class="sidebar-item">🏅 <span class="text">Badges</span></a>
+        <a href="index.html" class="sidebar-item">🚪 <span class="text">Logout</span></a>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+        <h1>Leaderboard</h1>
+        <table class="leaderboard">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rank">🥇 1</td>
+                    <td>Aarav Sharma</td>
+                    <td>1200</td>
+                </tr>
+                <tr>
+                    <td class="rank">🥈 2</td>
+                    <td>Priya Mehta</td>
+                    <td>1150</td>
+                </tr>
+                <tr>
+                    <td class="rank">🥉 3</td>
+                    <td>Rohan Patel</td>
+                    <td>1100</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Neha Gupta</td>
+                    <td>1020</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Aditya Verma</td>
+                    <td>980</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        }
+    </script>
+</body>
+
+</html>

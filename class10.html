@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 10: Congratulations - GreenLearn</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7f6;
+            display: flex;
+            height: 100vh;
+            color: #333;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: #fff;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            transition: width 0.3s;
+        }
+
+        .sidebar.collapsed {
+            width: 80px;
+        }
+
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #2e7d32;
+            transition: opacity 0.3s;
+        }
+
+        .sidebar.collapsed h2 {
+            opacity: 0;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 12px 0;
+            color: #333;
+            font-size: 15px;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .sidebar-item:hover {
+            background: #e6f0eb;
+        }
+
+        .sidebar-item span.text {
+            white-space: nowrap;
+        }
+
+        .sidebar.collapsed .sidebar-item span.text {
+            display: none;
+        }
+
+        .main {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            text-align: center;
+        }
+
+        .main h1 {
+            margin: 0 0 20px;
+            color: #2e7d32;
+            font-size: 2em;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .image-container img {
+            max-width: 300px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .lesson-content {
+            background: #fff;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            display: inline-block;
+            text-align: left;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .lesson-content h2 {
+            color: #222;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .certificate-btn {
+            display: inline-block;
+            background: #2e7d32;
+            color: #fff;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+
+        .certificate-btn:hover {
+            background: #1b5e20;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+        <h2>Ecofinity</h2>
+        <a href="chapters.html" class="sidebar-item">📚 <span class="text">Chapters</span></a>
+        <a href="leaderboard.html" class="sidebar-item">🏆 <span class="text">Leaderboard</span></a>
+        <a href="badges.html" class="sidebar-item">🏅 <span class="text">Badges</span></a>
+        <a href="index.html" class="sidebar-item">🚪 <span class="text">Logout</span></a>
+    </div>
+
+    <div class="main">
+        <h1>🎉 Congratulations!</h1>
+        <div class="image-container">
+            <img src="images/certificate.png" alt="Certificate of Achievement">
+        </div>
+
+        <div class="lesson-content">
+            <h2>You Did It! 🌱</h2>
+            <p>
+                You have completed all the classes of **GreenLearn**!
+                You’ve learned about ecology, biodiversity, climate change, sustainable farming, pollution, and much
+                more.
+            </p>
+            <p>
+                Now it’s time to celebrate your achievement. 🌟
+                Download your certificate and share your success with others!
+            </p>
+            <!-- Name input + certificate download -->
+            <input type="text" id="studentName" placeholder="Enter your name"
+                style="padding:10px; border-radius:8px; border:1px solid #ccc; width:250px;">
+            <br><br>
+            <a id="certificateLink" class="certificate-btn">🏅 Download Certificate</a>
+
+            <script>
+                document.getElementById("certificateLink").addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const name = document.getElementById("studentName").value || "Student";
+                    window.location.href = `/certificate?name=${encodeURIComponent(name)}`;
+                });
+            </script>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        }
+    </script>
+</body>
+
+</html>

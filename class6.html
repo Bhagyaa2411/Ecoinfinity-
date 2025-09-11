@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 6: Sustainable Agriculture - GreenLearn</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7f6;
+            display: flex;
+            height: 100vh;
+            color: #333;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: #fff;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            transition: width 0.3s;
+        }
+
+        .sidebar.collapsed {
+            width: 80px;
+        }
+
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #2e7d32;
+            transition: opacity 0.3s;
+        }
+
+        .sidebar.collapsed h2 {
+            opacity: 0;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 12px 0;
+            color: #333;
+            font-size: 15px;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .sidebar-item:hover {
+            background: #e6f0eb;
+        }
+
+        .sidebar-item span.text {
+            white-space: nowrap;
+        }
+
+        .sidebar.collapsed .sidebar-item span.text {
+            display: none;
+        }
+
+        .main {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .main h1 {
+            margin: 0 0 20px;
+            color: #2e7d32;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .lesson-content {
+            background: #fff;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .lesson-content h2 {
+            color: #222;
+            margin-top: 0;
+        }
+
+        .quiz-btn {
+            display: inline-block;
+            background: #2e7d32;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .quiz-btn:hover {
+            background: #1b5e20;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+        <h2>Ecofinity</h2>
+        <a href="chapters.html" class="sidebar-item">📚 <span class="text">Chapters</span></a>
+        <a href="leaderboard.html" class="sidebar-item">🏆 <span class="text">Leaderboard</span></a>
+        <a href="badges.html" class="sidebar-item">🏅 <span class="text">Badges</span></a>
+        <a href="index.html" class="sidebar-item">🚪 <span class="text">Logout</span></a>
+    </div>
+
+    <div class="main">
+        <h1>🌱 Class 6: Sustainable Agriculture</h1>
+        <div class="image-container">
+            <img src="images/sustainable-agriculture.jpg" alt="Sustainable Farming Illustration">
+        </div>
+
+        <div class="lesson-content">
+            <h2>Farming with Care</h2>
+            <p>
+                **Sustainable agriculture** means growing food in a way that’s healthy for both people and the planet.
+                Farmers use fewer chemicals, save water, and protect the soil so that future generations can keep
+                farming.
+            </p>
+            <p>
+                Crop rotation, organic fertilizers, and natural pest control are some of the techniques that help keep
+                farms
+                productive without harming the environment.
+            </p>
+            <a href="quiz6.html" class="quiz-btn">Take Quiz</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        }
+    </script>
+</body>
+
+</html>
